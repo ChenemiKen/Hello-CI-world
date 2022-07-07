@@ -20,9 +20,9 @@ jobs:
   
   print-world:
     docker:
-     - image: circleci/node:13.8.0
+      - image: circleci/node:13.8.0
     steps:
-     - run:
+      - run:
           name: "print world"
           command: "echo World!"
      
@@ -32,7 +32,7 @@ jobs:
 workflows:
   print-hello-world-workflow:
     jobs:
-     - print-hello
-     - print-world:
+      - print-hello
+      - print-world:
           requires:
-            print-hello
+            - print-hello
