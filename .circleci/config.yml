@@ -20,12 +20,12 @@ jobs:
   
   print-my-name:
     docker:
-      - image:cimg/base:stable
+      - image: cimg/base:stable
     steps:
       - run:
-        name: "Print my name Env vars"
-        command: |
-          echo $MY_NAME
+          name: "Print my name Env vars"
+          command: |
+            echo $MY_NAME
      
 workflows:
   print-hello-world-workflow:
