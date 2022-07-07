@@ -27,7 +27,6 @@ jobs:
         command: |
         echo $MY_NAME
      
-
 workflows:
   print-hello-world-workflow:
     jobs:
