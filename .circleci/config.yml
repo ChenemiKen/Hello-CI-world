@@ -25,7 +25,7 @@ jobs:
       - run:
         name: "Print my name Env vars"
         command: |
-        echo $MY_NAME
+          echo $MY_NAME
      
 workflows:
   print-hello-world-workflow:
