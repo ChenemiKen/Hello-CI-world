@@ -15,7 +15,7 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "Say hello"
+          name: "print hello"
           command: "echo Hello,"
   
   print-world:
@@ -30,9 +30,9 @@ jobs:
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
-  print-hello-workflow:
+  print-hello-world-workflow:
     jobs:
-      - print-hello
-      - print-world:
+     - print-hello
+     - print-world:
           requires:
             print-hello
