@@ -23,6 +23,7 @@ jobs:
       - image:cimg/base:stable
     steps:
       - run:
+        name: "Print my name Env vars"
         command: |
         echo $MY_NAME
      
