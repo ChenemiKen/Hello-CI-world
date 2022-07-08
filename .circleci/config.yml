@@ -7,7 +7,7 @@ jobs:
     steps:
       - run:
           command: echo "hello world!" > output.txt
-      - persist-to-workspace:
+      - persist_to_workspace:
           root: ~/
           paths: 
             - output.txt
@@ -16,7 +16,7 @@ jobs:
     docker:
       - image: cimg/base:stable
     steps:
-      - attach-workspace:
+      - attach_workspace:
           at: ~/
       - run:  
           command: "cat output.txt"
