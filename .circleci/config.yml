@@ -8,7 +8,7 @@ jobs:
       - run:
         comand: echo "hello world!" > output.txt
       - persist-to-workspace:
-        root: /tmp/workspace
+        root: ~/
         paths: 
           - output.txt
 
@@ -17,7 +17,7 @@ jobs:
       - image: cimg/base:stable
     steps:
       - attach-workspace:
-        at: /tmp/workspace
+        at: ~/
       - run:  
         command: "cat output.txt"
 
