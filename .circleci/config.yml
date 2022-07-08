@@ -1,7 +1,7 @@
 version: 2.1
 
 jobs:
-  save-hello-world-output:
+  save_hello_world_output:
     docker: 
       - image: cimg/base:stable
     steps:
@@ -20,16 +20,12 @@ jobs:
         at: /tmp/workspace
       - run:  
         command: "cat output.txt"
-        
+
      
 workflows:
   print-hello-world-workflow:
     jobs:
-      - print-hello
-      - print-world:
+      - save_hello_world_output:
+      - print_output_file:
           requires:
-            - print-hello
-      - print-my-name:
-          requires:
-            - print-hello
-            - print-world
+            - save_hello_world_output:
