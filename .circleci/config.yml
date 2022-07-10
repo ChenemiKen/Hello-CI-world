@@ -16,5 +16,6 @@ jobs:
      
 workflows:
   print-hello-world-workflow:
-    - my_job
+    jobs:
+      - my_job
 
