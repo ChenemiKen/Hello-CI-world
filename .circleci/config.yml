@@ -1,31 +1,20 @@
 version: 2.1
 
+commands:
+  print_pipeline_id:
+    description: "prints the Circle CI Workflow ID"
+    steps:
+      - run: echo $CIRCLE_WORKFLOW_ID
+
 jobs:
-  save_hello_world_output:
+  my_job:
     docker: 
       - image: cimg/base:stable
     steps:
-      - run:
-          command: echo "hello world!" > output.txt
-      - persist_to_workspace:
-          root: ~/
-          paths: 
-            - output.txt
-
-  print_output_file:
-    docker:
-      - image: cimg/base:stable
-    steps:
-      - attach_workspace:
-          at: ~/
-      - run:  
-          command: "cat output.txt"
+      - print_pipeine_id
 
      
 workflows:
   print-hello-world-workflow:
-    jobs:
-      - save_hello_world_output
-      - print_output_file:
-          requires:
-            - save_hello_world_output
+    - my_job
+
