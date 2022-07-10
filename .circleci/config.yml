@@ -10,8 +10,7 @@ jobs:
           name: on error
           command: echo "Job failed with error code 1"
           when: on_fail
-
-     
+   
 workflows:
   print-hello-world-workflow:
     jobs:
