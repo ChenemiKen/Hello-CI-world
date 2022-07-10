@@ -5,7 +5,7 @@ jobs:
     docker: 
       - image: circleci/node:13.8.0
     steps:
-      - run: return 1
+      - run: exit 1
       - run: 
           command: echo "Job failed with error code 1"
           when: on_fail
