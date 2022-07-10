@@ -7,8 +7,9 @@ jobs:
     steps:
       - run: exit 1
       - run: 
-          command: echo "Job failed with error code 1"
-          when: on_fail
+        name: on error
+        command: echo "Job failed with error code 1"
+        when: on_fail
 
      
 workflows:
