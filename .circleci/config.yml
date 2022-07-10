@@ -1,17 +1,14 @@
 version: 2.1
 
-commands:
-  print_pipeline_id:
-    description: "prints the Circle CI Workflow ID"
-    steps:
-      - run: echo $CIRCLE_WORKFLOW_ID
-
 jobs:
   my_job:
     docker: 
-      - image: cimg/base:stable
+      - image: circleci/node:13.8.0
     steps:
-      - print_pipeline_id
+      - run: return 1
+      - run: 
+        command: echo "Job failed with error code 1"
+        when: on_fail
 
      
 workflows:
